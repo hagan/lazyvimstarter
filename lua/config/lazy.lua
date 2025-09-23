@@ -33,6 +33,15 @@ require("lazy").setup({
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
+  -- Git/YubiKey configuration
+  git = {
+    -- Reduce timeout for YubiKey operations
+    timeout = 120, -- seconds
+    -- Use HTTPS instead of SSH for cloning
+    url_format = "https://github.com/%s.git",
+  },
+  -- Concurrency setting for YubiKey compatibility
+  concurrency = 1, -- Update plugins one at a time for YubiKey
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update

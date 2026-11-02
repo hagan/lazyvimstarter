@@ -33,6 +33,10 @@ require("lazy").setup({
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
+  -- No plugin in this config needs luarocks (`:checkhealth lazy` confirms);
+  -- disabling it skips the hererocks/Lua 5.1 bootstrap and its health errors.
+  -- Re-enable if a plugin ever declares a rockspec.
+  rocks = { enabled = false },
   -- Git/YubiKey configuration
   git = {
     -- Reduce timeout for YubiKey operations
